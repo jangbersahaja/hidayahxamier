@@ -12,6 +12,8 @@ const Container = styled.div`
   height: 100%;
 
   position: relative;
+
+  background-color: whitesmoke;
 `;
 
 const Wrapper = styled.div`
@@ -30,9 +32,7 @@ const BG = styled.div`
 
   position: absolute;
 
-  opacity: 0.1;
-
-  z-index: -1;
+  opacity: 0.2;
 `;
 
 const Detail = styled.div`
@@ -60,7 +60,7 @@ const Big = styled.p`
 `;
 
 const OurName = styled.p`
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
 `;
 
@@ -136,7 +136,7 @@ const Details = () => {
         </Salam>
         <Detail>
           <Big>Norazizan Bin Aziz & Zarina Binti Abd Halim</Big>
-          <Text>Serta </Text>
+          <Text>- Dan -</Text>
           <Big>Esah Binti Ibrahim & Che Rahim Bin Che Harun</Big>
         </Detail>
         <Detail>
@@ -157,7 +157,7 @@ const Details = () => {
         </Detail>
         <Detail>
           <OurName> Nur Anis Diana Binti Norazizan</OurName>
-          <Text>Dan </Text>
+          <OurName>- & -</OurName>
           <OurName> Hasrul Fahmizan Bin Hashim</OurName>
         </Detail>
         <Detail>

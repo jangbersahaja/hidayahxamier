@@ -5,24 +5,35 @@ import styled from "styled-components";
 import Image from "next/image";
 
 import { BsPinMapFill, BsTelephone } from "react-icons/bs";
+import { SiWaze, SiGooglemaps } from "react-icons/si";
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 
+  background-color: #000;
+  opacity: ${(props) => props.opacity};
+  transition: all ease-in-out 300ms;
+
+  position: fixed;
+  top: 0;
+
   width: 100%;
-  height: 120px;
+  height: 100%;
+
+  z-index: 1;
 `;
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   background-color: #9dbaa1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   width: 100%;
-
   gap: 20px;
 
   position: fixed;
@@ -36,13 +47,15 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: #69976b;
+  background: linear-gradient(90deg, #9dbaa1, #69976b, #69976b, #9dbaa1);
   color: #fff;
 
   height: 50px;
-  width: 48%;
+  width: 50%;
 
   gap: 20px;
+
+  cursor: pointer;
 `;
 
 const Drive = styled.div`
@@ -52,15 +65,16 @@ const Drive = styled.div`
   align-items: center;
 
   background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   gap: 20px;
   max-width: 600px;
   width: 90%;
 
   position: absolute;
-  top: -400px;
+  top: ${(props) => props.display};
 
-  display: ${(props) => props.display};
+  transition: all ease-in-out 300ms;
 `;
 
 const Application = styled.div`
@@ -80,6 +94,8 @@ const Map = styled.div`
 const Address = styled.p`
   font-size: 16px;
   padding: 0 20px;
+
+  text-align: center;
 `;
 
 const Venue = styled.p`
@@ -90,6 +106,7 @@ const Venue = styled.p`
 
 const Title = styled.p`
   font-size: 16px;
+  font-weight: 500;
 `;
 
 const Nav = () => {
@@ -97,43 +114,48 @@ const Nav = () => {
   console.log(open);
 
   return (
-    <Wrapper>
-      <Box>
-        <BsTelephone />
-        <Title> Hubungi</Title>
-      </Box>
-      <Box onClick={() => setOpen(!open)}>
-        <BsPinMapFill />
-        <Title>Lokasi</Title>
-      </Box>
-      <Drive display={open === false ? "none" : "flex"}>
-        <Map>
-          <Image
-            src={require("/src/img/Screenshot 2022-04-22 at 20.20.08.png")}
-            layout="fill"
-            objectFit="cover"
-            alt="Gambar Profil Reezal Merican"
-          />
-        </Map>
-        <Venue>Zemi Garden Wedding</Venue>
-        <Address>
-          Lot 11909, Jalan Rasah, Taman Tuan Sheikh, 70300 Seremban, Negeri
-          Sembilan
-        </Address>
-        <Application>
-          <Box as="a" href="https://waze.com/ul/hw22rrehw7" target="_blank">
-            <Title> Waze</Title>
-          </Box>
-          <Box
-            as="a"
-            href="https://goo.gl/maps/xQZUqEbdHsVzsz8t8"
-            target="_blank"
-          >
-            <Title> Google Map </Title>
-          </Box>
-        </Application>
-      </Drive>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Box>
+          <BsTelephone />
+          <Title> Hubungi</Title>
+        </Box>
+        <Box onClick={() => setOpen(!open)}>
+          <BsPinMapFill />
+          <Title>Lokasi</Title>
+        </Box>
+        <Drive display={open === false ? "400px" : "-400px"}>
+          <Map>
+            <Image
+              src={require("/src/img/Screenshot 2022-04-22 at 20.20.08.png")}
+              layout="fill"
+              objectFit="cover"
+              alt="Gambar Profil Reezal Merican"
+            />
+          </Map>
+          <Venue>Zemi Garden Wedding</Venue>
+          <Address>
+            Lot 11909, Jalan Rasah, Taman Tuan Sheikh, 70300 Seremban, Negeri
+            Sembilan
+          </Address>
+          <Application>
+            <Box as="a" href="https://waze.com/ul/hw22rrehw7" target="_blank">
+              <SiWaze />
+              <Title> Waze</Title>
+            </Box>
+            <Box
+              as="a"
+              href="https://goo.gl/maps/xQZUqEbdHsVzsz8t8"
+              target="_blank"
+            >
+              <SiGooglemaps />
+              <Title> Google Map </Title>
+            </Box>
+          </Application>
+        </Drive>
+      </Wrapper>
+      <Container opacity={open === false ? "0" : "0.4"} />
+    </>
   );
 };
 

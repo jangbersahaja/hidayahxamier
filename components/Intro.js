@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import styled from "styled-components";
 
 import Image from "next/image";
@@ -7,11 +9,19 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 50px);
+  height: 100%;
 
-  background-color: #f2e9d7;
+  position: fixed;
 
-  z-index: 0;
+  background-color: whitesmoke;
+
+  transition: all ease-in 500ms;
+
+  opacity: ${(props) => props.opacity};
+
+  margin-top: ${(props) => props.margin};
+
+  z-index: 3;
 `;
 
 const Wrapper = styled.div`
@@ -19,7 +29,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  height: 90%;
+  height: 80%;
   width: 95%;
   max-width: 450px;
 
@@ -171,31 +181,46 @@ const Date = styled.h1`
 `;
 
 const DayTime = styled.p`
-  font-size: 12px;
+  font-size: 20px;
   padding: 2px 10px;
   border-top: 1px solid;
   border-bottom: 1px solid;
 
   letter-spacing: 1px;
+
+  margin: 50px;
 `;
 
-const Year = styled.p`
-  font-size: 20px;
+const Open = styled.p`
+  font-size: 16px;
+  font-weight: 500;
+
+  border: 1px solid;
+
+  background: linear-gradient(90deg, #9dbaa1, #69976b, #69976b, #9dbaa1);
+  color: #fff;
+
+  padding: 10px 20px;
+
+  margin: 50px 0;
+
+  cursor: pointer;
+
+  transition: all ease-in-out 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 
-const Invitation = () => {
+const Intro = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <Container>
-      <SideCard>
-        <BG>
-          <Image
-            src={require("/src/img/3.jpg")}
-            layout="fill"
-            objectFit="cover"
-            alt="Gambar Profil Reezal Merican"
-          />
-        </BG>
-      </SideCard>
+    <Container
+      opacity={open === true ? "0" : "1"}
+      margin={open === true ? "100vh" : "0"}
+    >
       <Wrapper>
         <BG>
           <Image
@@ -206,36 +231,16 @@ const Invitation = () => {
           />
         </BG>
         <TextWrapper>
-          <audio src="/music.mp3" autoPlay></audio>
-          <Title>Jemputan Ke Majlis Perkahwinan</Title>
-          <Border>
-            <Anis>Anis</Anis>
-            <And> dan </And>
-            <Hasrul>Hasrul</Hasrul>
-          </Border>
-          <DateWrapper>
-            <Month>MEI</Month>
-            <InlineDate>
-              <DayTime>AHAD</DayTime>
-              <Date>22</Date>
-              <DayTime>12 P.M</DayTime>
-            </InlineDate>
-            <Year>2022</Year>
-          </DateWrapper>
+          {open === true ? <audio src="/music.mp3" autoPlay></audio> : ""}
+          <DayTime>22 Mei 2022</DayTime>
+          <Anis>Anis</Anis>
+          <And>Dan</And>
+          <Hasrul>Hasrul</Hasrul>
+          <Open onClick={() => setOpen(true)}>Buka Jemputan</Open>
         </TextWrapper>
       </Wrapper>
-      <SideCard>
-        <BG>
-          <Image
-            src={require("/src/img/3.jpg")}
-            layout="fill"
-            objectFit="cover"
-            alt="Gambar Profil Reezal Merican"
-          />
-        </BG>
-      </SideCard>
     </Container>
   );
 };
 
-export default Invitation;
+export default Intro;

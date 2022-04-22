@@ -7,18 +7,21 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  padding: 50px 0;
+  height: 200px;
 
   background-color: #edf7f0;
 `;
 
 const TimerWrapper = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const TimerInner = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
 
   gap: 10px;
 `;
@@ -34,6 +37,8 @@ const TimerSegment = styled.div`
 const Time = styled.span`
   font-weight: 500;
   font-size: 70px;
+
+  color: #827862;
 `;
 
 const Label = styled.span`

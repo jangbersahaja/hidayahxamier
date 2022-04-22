@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import Snowfall from "react-snowfall";
+
 import Image from "next/image";
 
 const Container = styled.div`
@@ -19,39 +21,12 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  height: 90%;
-  width: 95%;
-  max-width: 450px;
-
-  border-radius: 10px;
-  overflow: hidden;
-
-  position: relative;
-
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-`;
-
-const SideCard = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 90%;
+  height: 100%;
   width: 100%;
-  max-width: 450px;
 
-  border-radius: 10px;
   overflow: hidden;
 
-  transform: scaleX(-1);
-
   position: relative;
-
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-  @media (max-width: 1200px) {
-    display: none;
-  }
 `;
 
 const BG = styled.div`
@@ -59,6 +34,21 @@ const BG = styled.div`
   height: 100%;
 
   position: relative;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const BGRotate = styled.div`
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const TextWrapper = styled.div`
@@ -183,34 +173,44 @@ const Year = styled.p`
   font-size: 20px;
 `;
 
-const Invitation = () => {
+const Hero = () => {
   return (
     <Container>
-      <SideCard>
-        <BG>
-          <Image
-            src={require("/src/img/3.jpg")}
-            layout="fill"
-            objectFit="cover"
-            alt="Gambar Profil Reezal Merican"
-          />
-        </BG>
-      </SideCard>
+      <Snowfall
+        color="#F2F5F3"
+        style={{
+          position: "fixed",
+          width: "100vw",
+          height: "100vh",
+          zIndex: "1",
+        }}
+      />
       <Wrapper>
         <BG>
           <Image
             src={require("/src/img/3.jpg")}
             layout="fill"
             objectFit="cover"
-            alt="Gambar Profil Reezal Merican"
+            alt="Floral Background"
           />
         </BG>
+        <BGRotate>
+          <Image
+            src={require("/src/img/3 copy.jpg")}
+            layout="fill"
+            objectFit="cover"
+            alt="Floral Background"
+          />
+        </BGRotate>
         <TextWrapper>
-          <audio src="/music.mp3" autoPlay></audio>
-          <Title>Jemputan Ke Majlis Perkahwinan</Title>
+          <Title>
+            Jemputan Ke
+            <br />
+            Majlis Perkahwinan
+          </Title>
           <Border>
             <Anis>Anis</Anis>
-            <And> dan </And>
+            <And>Dan</And>
             <Hasrul>Hasrul</Hasrul>
           </Border>
           <DateWrapper>
@@ -224,18 +224,8 @@ const Invitation = () => {
           </DateWrapper>
         </TextWrapper>
       </Wrapper>
-      <SideCard>
-        <BG>
-          <Image
-            src={require("/src/img/3.jpg")}
-            layout="fill"
-            objectFit="cover"
-            alt="Gambar Profil Reezal Merican"
-          />
-        </BG>
-      </SideCard>
     </Container>
   );
 };
 
-export default Invitation;
+export default Hero;

@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: blanchedalmond;
+  background-color: #9dbaa1;
 
   width: 100%;
 
@@ -36,7 +36,8 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: blanchedalmond;
+  background-color: #69976b;
+  color: #fff;
 
   height: 50px;
   width: 48%;
@@ -57,7 +58,7 @@ const Drive = styled.div`
   width: 90%;
 
   position: absolute;
-  top: -360px;
+  top: -400px;
 
   display: ${(props) => props.display};
 `;
@@ -121,14 +122,14 @@ const Nav = () => {
         </Address>
         <Application>
           <Box as="a" href="https://waze.com/ul/hw22rrehw7" target="_blank">
-            Waze
+            <Title> Waze</Title>
           </Box>
           <Box
             as="a"
             href="https://goo.gl/maps/xQZUqEbdHsVzsz8t8"
             target="_blank"
           >
-            Google Map
+            <Title> Google Map </Title>
           </Box>
         </Application>
       </Drive>

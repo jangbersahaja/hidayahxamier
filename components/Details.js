@@ -7,6 +7,11 @@ const Container = styled.div`
 
   justify-content: center;
   align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  position: relative;
 `;
 
 const Wrapper = styled.div`
@@ -15,13 +20,8 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  gap: 20px;
+  gap: 30px;
   padding: 100px 10px;
-
-  width: 100%;
-  height: 100%;
-
-  position: relative;
 `;
 
 const BG = styled.div`
@@ -47,8 +47,6 @@ const Salam = styled.div`
   width: 300px;
   height: 105px;
 
-  margin-bottom: 20px;
-
   position: relative;
 `;
 
@@ -70,10 +68,10 @@ const Disclosure = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 80%;
+  width: 90%;
   max-width: 600px;
 
-  margin-top: 20px;
+  margin: 30px 0;
 
   border-radius: 10px;
   border: 1px solid;
@@ -119,25 +117,23 @@ const DisListUndeline = styled.u`
 const Details = () => {
   return (
     <Container>
+      <BG>
+        <Image
+          src={require("/src/img/1570846.jpg")}
+          layout="fill"
+          objectFit="cover"
+          alt="Floral Background"
+        />
+      </BG>
       <Wrapper>
-        <BG>
+        <Salam>
           <Image
-            src={require("/src/img/1570846.jpg")}
+            src={require("/src/img/bismillah.png")}
             layout="fill"
             objectFit="cover"
-            alt="Floral Background"
+            alt="Basmallah"
           />
-        </BG>
-        <Detail>
-          <Salam>
-            <Image
-              src={require("/src/img/toppng.com-bismillah-png-images-free-download-bismillah-calligraphy-1600x559.png")}
-              layout="fill"
-              objectFit="cover"
-              alt="Basmallah"
-            />
-          </Salam>
-        </Detail>
+        </Salam>
         <Detail>
           <Big>Norazizan Bin Aziz & Zarina Binti Abd Halim</Big>
           <Text>Serta </Text>

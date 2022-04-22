@@ -7,7 +7,7 @@ import Image from "next/image";
 const Container = styled.div`
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  padding-top: 5%;
   height: 100vh;
 
   background-color: #f2e9d7;
@@ -18,8 +18,8 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  height: 90vh;
-  width: 100%;
+  height: 90%;
+  width: 95%;
   max-width: 450px;
 
   border-radius: 10px;
@@ -35,12 +35,14 @@ const SideCard = styled.div`
   justify-content: center;
   align-items: center;
 
-  height: 90vh;
+  height: 90%;
   width: 100%;
   max-width: 450px;
 
   border-radius: 10px;
   overflow: hidden;
+
+  transform: scaleX(-1);
 
   position: relative;
 
@@ -54,6 +56,8 @@ const SideCard = styled.div`
 const BG = styled.div`
   width: 100%;
   height: 100%;
+
+  position: relative;
 `;
 
 const TextWrapper = styled.div`

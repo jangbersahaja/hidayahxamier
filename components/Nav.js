@@ -74,7 +74,7 @@ const Drive = styled.div`
   position: absolute;
   top: ${(props) => props.display};
 
-  transition: all ease-in-out 300ms;
+  transition: all ease-in-out 500ms;
 `;
 
 const Application = styled.div`
@@ -111,7 +111,6 @@ const Title = styled.p`
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
-  console.log(open);
 
   return (
     <>

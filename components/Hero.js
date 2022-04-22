@@ -11,7 +11,7 @@ const Container = styled.div`
   width: 100%;
   height: calc(100vh - 50px);
 
-  background-color: #f2e9d7;
+  background-color: whitesmoke;
 
   z-index: 0;
 `;
@@ -41,8 +41,8 @@ const BG = styled.div`
 `;
 
 const BGRotate = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 90%;
 
   position: relative;
 

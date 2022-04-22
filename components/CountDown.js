@@ -9,7 +9,7 @@ const Container = styled.div`
 
   height: 200px;
 
-  background-color: #edf7f0;
+  background-color: whitesmoke;
 `;
 
 const TimerWrapper = styled.div`

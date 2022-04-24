@@ -109,21 +109,44 @@ const Title = styled.p`
   font-weight: 500;
 `;
 
+const Contact = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  gap: 20px;
+  max-width: 600px;
+  width: 90%;
+
+  position: absolute;
+  top: ${(props) => props.display};
+
+  transition: all ease-in-out 500ms;
+`;
+
 const Nav = () => {
-  const [open, setOpen] = useState(false);
+  const [openLocation, setOpenLocation] = useState(false);
+  const [openContact, setOpenContact] = useState(false);
 
   return (
     <>
       <Wrapper>
-        <Box>
+        <Box onClick={() => setOpenContact(!openContact)}>
           <BsTelephone />
-          <Title> Hubungi</Title>
+          <Title>Hubungi</Title>
         </Box>
-        <Box onClick={() => setOpen(!open)}>
+        <Contact display={openContact === false ? "400px" : "-400px"}>
+          <Title>Hubungi</Title>
+        </Contact>
+        <Box onClick={() => setOpenLocation(!openLocation)}>
           <BsPinMapFill />
           <Title>Lokasi</Title>
         </Box>
-        <Drive display={open === false ? "400px" : "-400px"}>
+        <Drive display={openLocation === false ? "400px" : "-400px"}>
           <Map>
             <Image
               src={require("/src/img/Screenshot 2022-04-22 at 20.20.08.png")}
@@ -153,7 +176,7 @@ const Nav = () => {
           </Application>
         </Drive>
       </Wrapper>
-      <Container opacity={open === false ? "0" : "0.4"} />
+      <Container opacity={openLocation === false ? "0" : "0.4"} />
     </>
   );
 };

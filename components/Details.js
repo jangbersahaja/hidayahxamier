@@ -135,9 +135,9 @@ const Details = () => {
           />
         </Salam>
         <Detail>
-          <Big>Norazizan Bin Aziz & Zarina Binti Abd Halim</Big>
-          <Text>- Dan -</Text>
-          <Big>Esah Binti Ibrahim & Che Rahim Bin Che Harun</Big>
+          <Big>Norazizan Bin Aziz</Big>
+          <Text>- & -</Text>
+          <Big>Zarina Binti Abd Halim</Big>
         </Detail>
         <Detail>
           <Text>
@@ -181,14 +181,8 @@ const Details = () => {
         <Detail>
           <Text>
             <Big>Atucara Majlis </Big>
-            Jamuan Makan : 12:00 Tengahri - 4:00 Petang <br />
-            Ketibaan Pengantin : 1:30 Petang
-          </Text>
-        </Detail>
-        <Detail>
-          <Text>
-            <Big>Tema Pakaian </Big>
-            Tradisional Melayu
+            Jamuan Makan : 12:00 Tengahri - 3:00 Petang <br />
+            Ketibaan Pengantin : 12:30 Petang
           </Text>
         </Detail>
         <Disclosure>

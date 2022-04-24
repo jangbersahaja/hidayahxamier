@@ -14,8 +14,16 @@ const Container = styled.div`
 
 const TimerWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const Title = styled.p`
+  font-size: 18px;
+  text-align: center;
+
+  padding: 1px 5px;
 `;
 
 const TimerInner = styled.div`
@@ -88,6 +96,7 @@ const CountDown = () => {
   return (
     <Container>
       <TimerWrapper>
+        <Title>Counting Days</Title>
         <TimerInner>
           <TimerSegment>
             <Time>{days}</Time>

@@ -21,7 +21,7 @@ export default function Home() {
         <meta property="og:url" content={canonical} />
         <meta
           property="og:site_name"
-          content="Majlis Perkahwinan Anis & Hasrul"
+          content="Jemputan Ke Majlis Perkahwinan Anis & Hasrul"
         />
         <meta property="og:image" content="/default.png" />
       </Head>
@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <>
       <MetaHeader
-        metaTitle="Majlis Perkahwinan Anis & Hasrul"
+        metaTitle="Jemputan Ke Majlis Perkahwinan Anis & Hasrul"
         metaDesc="22 Mei 2022 | Ahad | 12:00 Tengahari"
         canonical={`https://anisxhasrul.vercel.app/`}
       />

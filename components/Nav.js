@@ -140,7 +140,8 @@ const Nav = () => {
           <Title>Hubungi</Title>
         </Box>
         <Contact display={openContact === false ? "400px" : "-400px"}>
-          <Title>Hubungi</Title>
+          <Title>Awie (Bapa) - 019 380 0254</Title>
+          <Title>Awie (Ibu) - 012 309 0254</Title>
         </Contact>
         <Box onClick={() => setOpenLocation(!openLocation)}>
           <BsPinMapFill />

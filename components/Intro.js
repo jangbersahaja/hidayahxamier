@@ -231,7 +231,7 @@ const Intro = () => {
           />
         </BG>
         <TextWrapper>
-          {open === true ? <audio src="/sempurna.mpeg" autoPlay></audio> : ""}
+          {open === true ? <audio src="/sempurna.mp3" autoPlay></audio> : ""}
           <DayTime>22 Mei 2022</DayTime>
           <Anis>Anis</Anis>
           <And>Dan</And>

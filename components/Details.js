@@ -153,7 +153,7 @@ const Details = () => {
           </Text>
         </Detail>
         <Detail>
-          <Text>Ke Majlis Perkahwinan Anakanda Kami</Text>
+          <Text>Ke Majlis Perkahwinan Puteri Kami</Text>
         </Detail>
         <Detail>
           <OurName> Nur Anis Diana Binti Norazizan</OurName>

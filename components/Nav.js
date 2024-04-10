@@ -220,7 +220,7 @@ const Nav = () => {
         </Contact>
         <a
           target="_blank"
-          href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=aW0zbTR0Z2tjY3F2NzFubjdocjlqbGdxaTggaGFzcnVsZmFobWl6YW5AbQ&amp;tmsrc=hasrulfahmizan%40gmail.com" rel="noreferrer"
+          href="https://calendar.app.google/YEA188bGHVne5iYh7" rel="noreferrer"
         >
           <img
             border="0"

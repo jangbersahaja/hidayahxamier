@@ -1,6 +1,7 @@
+import Image from "next/image";
 import styled from "styled-components";
 
-import Image from "next/image";
+import { Info } from "../details/info";
 
 const Container = styled.div`
   display: flex;
@@ -31,6 +32,8 @@ const BG = styled.div`
   height: 100%;
 
   position: absolute;
+  top: 0;
+  left: 0;
 
   opacity: 0.2;
 `;
@@ -41,6 +44,8 @@ const Detail = styled.div`
   align-items: center;
 
   text-align: center;
+
+  z-index: 1;
 `;
 
 const Salam = styled.div`
@@ -119,7 +124,7 @@ const Details = () => {
     <Container>
       <BG>
         <Image
-          src={require("/src/img/1570846.jpg")}
+          src={require("/src/img/background2.jpg")}
           layout="fill"
           objectFit="cover"
           alt="Floral Background"
@@ -135,9 +140,9 @@ const Details = () => {
           />
         </Salam>
         <Detail>
-          <Big>Norazizan Bin Aziz</Big>
+          <Big>{Info.Parent.Main}</Big>
           <Text>- & -</Text>
-          <Big>Zarina Binti Abd Halim</Big>
+          <Big>{Info.Parent.Partner}</Big>
         </Detail>
         <Detail>
           <Text>
@@ -153,56 +158,46 @@ const Details = () => {
           </Text>
         </Detail>
         <Detail>
-          <Text>Ke Majlis Perkahwinan Puteri Kami</Text>
+          <Text>
+            ke {Info.Title} {Info.Parent.Relation} kami
+          </Text>
         </Detail>
         <Detail>
-          <OurName> Nur Anis Diana Binti Norazizan</OurName>
+          <OurName>{Info.FN.Main}</OurName>
           <OurName>- & -</OurName>
-          <OurName> Hasrul Fahmizan Bin Hashim</OurName>
+          <OurName>{Info.FN.Partner}</OurName>
         </Detail>
         <Detail>
           <Text>
             Semoga dengan kehadiran dan doa restu para hadirin,
-            <br /> Majlis ini akan bertambah seri dan diberkati Allah SWT.
-            <br /> Terima Kasih
-          </Text>
-        </Detail>
-        <Detail>
-          <Big>22 Mei 2022 | Ahad | 12 Tengahari</Big>
-        </Detail>
-        <Detail>
-          <Text>
-            <Big>Zemi Garden Wedding </Big>
-            Lot 11909, Jalan Rasah, Taman Tuan Sheikh,
             <br />
-            70300 Seremban, Negeri Sembilan
+            majlis ini akan bertambah seri dan diberkati Allah SWT.
+            <br />
+            Terima Kasih.
+          </Text>
+        </Detail>
+        <Detail>
+          <Big>
+            {Info.Date.Date} {Info.Date.Month} {Info.Date.Year} |{" "}
+            {Info.Date.Day} | {Info.Date.Time}
+          </Big>
+        </Detail>
+        <Detail>
+          <Text>
+            <Big>{Info.Location.Venue}</Big>
+            {Info.Location.Address1},
+            <br />
+            {Info.Location.Address2}.
           </Text>
         </Detail>
         <Detail>
           <Text>
-            <Big>Atucara Majlis </Big>
-            Jamuan Makan : 12:00 Tengahri - 3:00 Petang <br />
-            Ketibaan Pengantin : 12:30 Petang
+            <Big>{Info.Extra.Title}</Big>
+            {Info.Extra.Line1}
+            <br />
+            {Info.Extra.Line2}
           </Text>
         </Detail>
-        <Disclosure>
-          <DisTitle>Peringatan</DisTitle>
-          <DisBot>
-            <DisText>
-              Majlis ini terhad kepada individu yang telah
-              <DisListUndeline>
-                {" "}
-                mendapat vaksin yang lengkap dan matang.
-              </DisListUndeline>{" "}
-              Mohon para tetamu untuk sentiasa mematuhi SOP norma baharu.
-            </DisText>
-            <DisList>
-              <DisListItem>Peka terhadap penjarakan fizikal.</DisListItem>
-              <DisListItem>Sentiasa memakai pelitup muka.</DisListItem>
-              <DisListItem>Menggunakan hand-sanitizer</DisListItem>
-            </DisList>
-          </DisBot>
-        </Disclosure>
       </Wrapper>
     </Container>
   );

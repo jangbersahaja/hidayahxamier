@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { useEffect, useState } from "react";
+import { Info } from "../details/info";
 
 const Container = styled.div`
   display: flex;
@@ -65,7 +66,7 @@ const CountDown = () => {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const target = new Date("05/22/2022 12:00:00");
+    const target = new Date(Info.Date.Counting);
 
     const interval = setInterval(() => {
       const now = new Date();

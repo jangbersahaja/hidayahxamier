@@ -1,8 +1,7 @@
+import Image from "next/image";
 import styled from "styled-components";
 
-import Snowfall from "react-snowfall";
-
-import Image from "next/image";
+import { Info } from "../details/info";
 
 const Container = styled.div`
   display: flex;
@@ -41,7 +40,7 @@ const BG = styled.div`
 `;
 
 const BGRotate = styled.div`
-  width: 80%;
+  width: 100%;
   height: 90%;
 
   position: relative;
@@ -52,38 +51,35 @@ const BGRotate = styled.div`
 `;
 
 const TextWrapper = styled.div`
-  position: absolute;
+position: absolute;
+margin-left: 70px;
+margin-bottom: 160px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: end;
+align-items: justify;
 
-  width: 100%;
-  height: 100%;
+width: 100%;
+height: 100%;
+
+gap: 30px;
 `;
 
 const Title = styled.p`
-  font-size: 18px;
-  text-align: center;
+font-size: 18px;
+text-align: left;
 
-  padding: 1px 5px;
+padding: 1px 5px;
+color: #F0D097;
 `;
 
 const Border = styled.div`
-  width: 300px;
-  height: 300px;
+display: flex;
+flex-direction: column;
 
-  margin: 30px 0;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 50%;
-  border-top: 3px solid #ecc798;
-  border-left: 3px solid #ecc798;
+justify-content: justify;
+align-items: justify;
 `;
 
 const Anis = styled.h2`
@@ -91,8 +87,8 @@ const Anis = styled.h2`
   line-height: 0.8;
   font-family: "MonteCarlo", cursive;
   font-size: 70px;
-  text-align: center;
-  color: #827862;
+  text-align: justify;
+  color: white;
   text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.1);
 `;
 
@@ -101,40 +97,19 @@ const Hasrul = styled.h2`
   line-height: 0.8;
   font-family: "MonteCarlo", cursive;
   font-size: 70px;
-  text-align: center;
-  color: #827862;
+  text-align: left;
+  color: white;
   text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.1);
 
-  margin-left: -30px;
 `;
 
 const And = styled.p`
-  margin: 10px;
-  font-size: 20px;
-  text-align: center;
-  position: relative;
+margin: -40px 0px 0px 180px;
+font-size: 50px;
+text-align: justify;
+position: relative;
+color: #F0D097;
 
-  &::before {
-    content: " ";
-    height: 1px;
-    width: 50px;
-    background: black;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50px;
-  }
-
-  &::after {
-    content: " ";
-    height: 1px;
-    width: 50px;
-    background: black;
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 50px;
-  }
 `;
 
 const DateWrapper = styled.div`
@@ -142,6 +117,8 @@ const DateWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #F0D097;
+  margin-top: 20px;
 `;
 
 const InlineDate = styled.div`
@@ -152,21 +129,40 @@ const InlineDate = styled.div`
 
 const Month = styled.p`
   font-size: 18px;
+  text-transform: uppercase;
 `;
 
 const Date = styled.h1`
   font-size: 50px;
   margin: 8px 15px;
   text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.1);
+  color: white;
 `;
 
-const DayTime = styled.p`
-  font-size: 12px;
+const Day = styled.p`
   padding: 2px 10px;
+  width: 70px;
+
   border-top: 1px solid;
   border-bottom: 1px solid;
 
-  letter-spacing: 1px;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+
+  letter-spacing: 2px;
+`;
+
+const Time = styled.p`
+  padding: 2px 10px;
+  width: 70px;
+
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
 `;
 
 const Year = styled.p`
@@ -176,19 +172,10 @@ const Year = styled.p`
 const Hero = () => {
   return (
     <Container>
-      <Snowfall
-        color="#F2F5F3"
-        style={{
-          position: "fixed",
-          width: "100vw",
-          height: "100vh",
-          zIndex: "1",
-        }}
-      />
       <Wrapper>
         <BG>
           <Image
-            src={require("/src/img/3.jpg")}
+            src={require("/src/img/background.jpg")}
             layout="fill"
             objectFit="cover"
             alt="Floral Background"
@@ -196,7 +183,7 @@ const Hero = () => {
         </BG>
         <BGRotate>
           <Image
-            src={require("/src/img/3 copy.jpg")}
+            src={require("/src/img/backgroundRotated.jpg")}
             layout="fill"
             objectFit="cover"
             alt="Floral Background"
@@ -204,23 +191,23 @@ const Hero = () => {
         </BGRotate>
         <TextWrapper>
           <Title>
-            Jemputan Ke
+            Jemputan
             <br />
-            Majlis Perkahwinan
+            {Info.Title}
           </Title>
           <Border>
-            <Anis>Anis</Anis>
-            <And>Dan</And>
-            <Hasrul>Hasrul</Hasrul>
+            <Anis>{Info.SN.Main}</Anis>
+            <And>&</And>
+            <Hasrul>{Info.SN.Partner}</Hasrul>
           </Border>
           <DateWrapper>
-            <Month>MEI</Month>
+            <Month>{Info.Date.Month}</Month>
             <InlineDate>
-              <DayTime>AHAD</DayTime>
-              <Date>22</Date>
-              <DayTime>12 P.M</DayTime>
+              <Day>{Info.Date.Day}</Day>
+              <Date>{Info.Date.Date}</Date>
+              <Time>{Info.Date.Time}</Time>
             </InlineDate>
-            <Year>2022</Year>
+            <Year>{Info.Date.Year}</Year>
           </DateWrapper>
         </TextWrapper>
       </Wrapper>

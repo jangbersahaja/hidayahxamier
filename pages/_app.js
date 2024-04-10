@@ -49,16 +49,6 @@ const theme = {
   width: {
     default: "clamp(70%, 1400px, 98%)",
   },
-  padding: {
-    default: "10vh 0",
-  },
-  color: {
-    bg: "#fff",
-    card: "whitesmoke",
-    primary: "#38507e",
-    secondary: "#b02e35",
-    text: "#5a656e",
-  },
 };
 
 export default class MyApp extends App {

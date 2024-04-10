@@ -206,7 +206,7 @@ const Nav = () => {
               <Title>{person.Name}</Title>
               <ContactApp>
                 <Link
-                  href={`http://wasap.my/+6${person.Phone}/Majlis+Perkahwinan+Anis+&+Hasrul`}
+                  href={`http://wasap.my/+6${person.Phone}/Majlis+Perkahwinan+Amier+&+Hidayah`}
                   target="_blank"
                 >
                   <Whatsapp />

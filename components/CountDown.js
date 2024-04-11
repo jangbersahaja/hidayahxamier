@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -8,9 +9,26 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  height: 200px;
+  height: 440px;
 
-  background-color: whitesmoke;
+  background: linear-gradient(90deg, #A65B76, #933B57, #933B57, #A65B76);
+
+  @media (min-width: 768px) {
+    height: 650px;
+  }
+
+  z-index: -1;
+  position: relative;
+`;
+
+const BG = styled.div`
+width: 100%;
+height: 100%;
+
+position: absolute;
+top: 0;
+left: 0;
+  
 `;
 
 const TimerWrapper = styled.div`
@@ -18,6 +36,9 @@ const TimerWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  z-index: 1;
+
 `;
 
 const Title = styled.p`
@@ -45,9 +66,13 @@ const TimerSegment = styled.div`
 
 const Time = styled.span`
   font-weight: 500;
-  font-size: 70px;
+  font-size: 40px;
 
   color: #827862;
+
+  @media (min-width: 768px) {
+    font-size: 70px;
+  }
 `;
 
 const Label = styled.span`
@@ -96,6 +121,14 @@ const CountDown = () => {
 
   return (
     <Container>
+    <BG>
+    <Image
+      src={require("/src/img/backgroundCounting.jpg")}
+       layout='fill'
+       objectFit="cover"
+      alt="Floral Background"
+    />
+  </BG>
       <TimerWrapper>
         <Title>Counting Days</Title>
         <TimerInner>

@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   position: relative;
+  
 `;
 
 const Front = styled.div`
@@ -30,6 +31,8 @@ const Front = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+
+  background: linear-gradient(90deg, #A65B76, #933B57, #933B57, #A65B76);
 
   transform: scale(${(props) => props.scale});
   opacity: ${(props) => props.opacity};

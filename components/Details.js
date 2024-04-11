@@ -35,7 +35,7 @@ const BG = styled.div`
   top: 0;
   left: 0;
 
-  opacity: 0.2;
+  opacity: 0.5;
 `;
 
 const Detail = styled.div`

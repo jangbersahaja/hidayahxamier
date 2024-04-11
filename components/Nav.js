@@ -206,7 +206,7 @@ const Nav = () => {
               <Title>{person.Name}</Title>
               <ContactApp>
                 <Link
-                  href={`http://wasap.my/+6${person.Phone}/Majlis+Perkahwinan+Amier+&+Hidayah`}
+                  href={`http://wasap.my/+6${person.Phone}/Majlis+Perkahwinan+Hidayah+&+Amier`}
                   target="_blank"
                 >
                   <Whatsapp />
@@ -220,7 +220,7 @@ const Nav = () => {
         </Contact>
         <a
           target="_blank"
-          href="https://calendar.app.google/JV32vr23enD76PE26" rel="noreferrer"
+          href="https://calendar.app.google/WSra6tgqzJZUerGT9" rel="noreferrer"
         >
           <img
             border="0"

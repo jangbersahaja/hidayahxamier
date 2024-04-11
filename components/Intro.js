@@ -77,11 +77,12 @@ const Hasrul = styled.h2`
   text-align: left;
   color: white;
   text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.1);
+  margin-left: 40px;
+  margin-top: -50px
 
 `;
 
 const And = styled.p`
-  margin: -40px 0px 0px 180px;
   font-size: 50px;
   text-align: justify;
   position: relative;

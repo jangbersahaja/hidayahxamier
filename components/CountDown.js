@@ -66,7 +66,7 @@ const TimerSegment = styled.div`
 
 const Time = styled.span`
   font-weight: 500;
-  font-size: 3px;
+  font-size: 33px;
 
   color: #827862;
 

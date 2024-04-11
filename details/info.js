@@ -15,7 +15,7 @@ export const Info = {
     Month: "Mei",
     Year: "2024",
     Day: "Ahad",
-    Time: "11:30 PM",
+    Time: "11:30 AM",
     Counting: "05/12/2024 11:30:00",
   },
   Location: {
@@ -27,7 +27,7 @@ export const Info = {
   },
   Extra: {
     Title: "Atucara Majlis",
-    Line1: "Jamuan Makan: 11:30 PM - 4:00 PM",
+    Line1: "Jamuan Makan: 11:30 AM - 4:00 PM",
     Line2: "Ketibaan Pengantin: 12:30 PM",
   },
   Contact: [
